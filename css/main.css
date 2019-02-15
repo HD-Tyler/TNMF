@@ -202,7 +202,8 @@ p {
   text-align: center; }
   #testimonials .customer-quotes {
     position: relative;
-    width: 75%; }
+    width: 75%;
+    margin: 75px 0 30px; }
     #testimonials .customer-quotes:after {
       content: '\201C';
       position: absolute;
@@ -213,6 +214,15 @@ p {
       font-size: 6em;
       z-index: -1;
       line-height: 0; }
+
+section.black-bg {
+  background: #000;
+  padding: 40px 0; }
+
+footer p {
+  color: #fff;
+  text-align: center;
+  font-size: .75rem; }
 
 @media (max-width: 575.98px) {
   #hero-content h1 {
