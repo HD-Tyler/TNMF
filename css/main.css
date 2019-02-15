@@ -183,10 +183,10 @@ p {
     color: #fff !important; }
 
 #about-us {
-  position: relative;
-  top: 5rem; }
+  position: relative; }
   #about-us #about-content {
-    max-width: 650px; }
+    max-width: 650px;
+    margin-top: 60px; }
 
 #features-list {
   display: inline-flex;
@@ -230,7 +230,9 @@ footer p {
   #hero-content h2 {
     font-size: 1rem; }
   .this-content {
-    width: 100%; } }
+    width: 100%; }
+  #features-list {
+    flex-direction: column; } }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
   #hero-content h1 {
