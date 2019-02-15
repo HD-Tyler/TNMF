@@ -16,3 +16,16 @@ wp-content/plugins/hello.php
 /readme.html
 /license.txt
 
+#ignore node modules
+node_modules/
+
+#ignore deployment file
+.vscode
+
+\.DS_Store
+.vs
+dist/
+phpinfo.php
+
+npm-debug.log
+
