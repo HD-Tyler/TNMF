@@ -1,47 +1,58 @@
 <?php
 /**
-* The main template file
-*
-* This is the most generic template file in a WordPress theme
-* and one of the two required files for a theme (the other being style.css).
-* It is used to display a page when nothing more specific matches a query.
-* E.g., it puts together the home page when no home.php file exists.
-*
-* @link https://developer.wordpress.org/themes/basics/template-hierarchy/
-*
-* @package WordPress
-* @subpackage TNMF
-* @since 1.0.0
-*/
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package TNMF
+ */
 
-get_header();
 ?>
+<!doctype html>
+<html <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-    <section id=“primary” class=“content-area”>
-        <main id=“main” class=“site-main”>
+	<?php wp_head(); ?>
+</head>
 
-        <?php
-        if ( have_posts() ) {
+<body <?php body_class(); ?>>
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'tnmf' ); ?></a>
 
-            // Load posts loop.
-            while ( have_posts() ) {
-                the_post();
-                get_template_part( ‘template-parts/content/content’ );
-            }
+	<header id="masthead" class="site-header">
+		<div class="site-branding">
+			<?php
+			the_custom_logo();
+			if ( is_front_page() && is_home() ) :
+				?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<?php
+			else :
+				?>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<?php
+			endif;
+			$tnmf_description = get_bloginfo( 'description', 'display' );
+			if ( $tnmf_description || is_customize_preview() ) :
+				?>
+				<p class="site-description"><?php echo $tnmf_description; /* WPCS: xss ok. */ ?></p>
+			<?php endif; ?>
+		</div><!-- .site-branding -->
 
-            // Previous/next page navigation.
-            twentynineteen_the_posts_navigation();
+		<nav id="site-navigation" class="main-navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'tnmf' ); ?></button>
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'menu-1',
+				'menu_id'        => 'primary-menu',
+			) );
+			?>
+		</nav><!-- #site-navigation -->
+	</header><!-- #masthead -->
 
-        } else {
-
-            // If no content, include the “No posts found” template.
-            get_template_part( ‘template-parts/content/content’, ‘none’ );
-
-        }
-        ?>
-
-        </main><!-- .site-main -->
-    </section><!-- .content-area -->
-
-<?php
-get_footer();
+	<div id="content" class="site-content">
