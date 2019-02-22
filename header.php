@@ -47,16 +47,11 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <?php
-                wp_nav_menu( array(
-                    'theme_location'    => 'menu-1',
-                    'container_class'   => 'collapse navbar-collapse',
-                    'container_id'      => 'navbarNav',
-                    'menu_class'        => 'navbar-nav',
-                    'add_li_class'      => 'nav-item'
-                ) );
-            ?>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <?php if (function_exists(load_primary_menu())) load_primary_menu(); ?>
+                </ul>
+            </div>
 
         </div>
     </nav>

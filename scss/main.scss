@@ -96,19 +96,7 @@ p{ font-weight: 100;}
     border: none;
 }
 
-ul.navbar-nav li{
-    display: block;
-    flex-direction: row;
-    padding: .5rem 1rem;
-        a{
-            color: $white !important;
-            text-decoration: none;
-            text-transform: uppercase;
-            &:hover {
-                color: $red !important;;
-            }
-        }    
-}
+
 #hero-content{
     padding: 20px;
     position: relative;
