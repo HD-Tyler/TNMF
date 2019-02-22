@@ -9,6 +9,7 @@ $dark-grey: #444;
 
 $border: 1px solid #EBEBEB;
 
+
 h1,h2,h3,h3{
     text-transform: uppercase;
     color: $dark-grey;
@@ -18,6 +19,10 @@ h2{font-weight: 100;}
 
 body{
     font-family: 'Roboto', sans-serif;
+}
+
+.logged-in .navbar-fxed-top{
+    top:32px;
 }
 p{ font-weight: 100;}
 
@@ -89,6 +94,20 @@ p{ font-weight: 100;}
 .navbar-light .navbar-toggler{
     color:  rgba(0,0,0,0);
     border: none;
+}
+
+ul.navbar-nav li{
+    display: block;
+    flex-direction: row;
+    padding: .5rem 1rem;
+        a{
+            color: $white !important;
+            text-decoration: none;
+            text-transform: uppercase;
+            &:hover {
+                color: $red !important;;
+            }
+        }    
 }
 #hero-content{
     padding: 20px;

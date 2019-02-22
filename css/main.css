@@ -18,6 +18,9 @@ h2 {
 body {
   font-family: 'Roboto', sans-serif; }
 
+.logged-in .navbar-fxed-top {
+  top: 32px; }
+
 p {
   font-weight: 100; }
 
@@ -63,6 +66,17 @@ p {
 .navbar-light .navbar-toggler {
   color: rgba(0, 0, 0, 0);
   border: none; }
+
+ul.navbar-nav li {
+  display: block;
+  flex-direction: row;
+  padding: .5rem 1rem; }
+  ul.navbar-nav li a {
+    color: #fff !important;
+    text-decoration: none;
+    text-transform: uppercase; }
+    ul.navbar-nav li a:hover {
+      color: #E70E0E !important; }
 
 #hero-content {
   padding: 20px;

@@ -15,7 +15,19 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="<?php bloginfo('stylesheet_directory'); ?>/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="<?php bloginfo('stylesheet_directory'); ?>/css/bootstrap-grid.css" type="text/css" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link href="<?php bloginfo('stylesheet_directory'); ?>/css/main.css" type="text/css" rel="stylesheet">
+
+     <!-- Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700,900" rel="stylesheet">
+
 
 	<?php wp_head(); ?>
 </head>
@@ -24,35 +36,28 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'tnmf' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$tnmf_description = get_bloginfo( 'description', 'display' );
-			if ( $tnmf_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $tnmf_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'tnmf' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+<!-- HEADER
+======================================================-->
+<header class="site-header" role="banner">
+    <nav class="navbar navbar-expand-lg fixed-top  navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="<?php echo get_option("siteurl"); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-s.png" ></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-	<div id="content" class="site-content">
+            <?php
+                wp_nav_menu( array(
+                    'theme_location'    => 'menu-1',
+                    'container_class'   => 'collapse navbar-collapse',
+                    'container_id'      => 'navbarNav',
+                    'menu_class'        => 'navbar-nav',
+                    'add_li_class'      => 'nav-item'
+                ) );
+            ?>
+
+        </div>
+    </nav>
+</header>
