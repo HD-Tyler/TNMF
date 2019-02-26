@@ -18,20 +18,11 @@ h1{ font-weight: 900 !important;}
 h2{font-weight: 100;}
 
 body{
+    margin: 0 !important;
     font-family: 'Roboto', sans-serif;
 }
 
-.logged-in .navbar-fxed-top{
-    top:32px;
-}
 p{ font-weight: 100;}
-
-
-.tnmf-btn{
-    padding: 15px 20px;
-    min-width: 300px;
-    font-size: 1.25rem;
-}
 
 #hero{
     background: url(../images/hero.png) no-repeat center center fixed;
@@ -96,7 +87,18 @@ p{ font-weight: 100;}
     border: none;
 }
 
+.navbar-nav .nav-link a{
+    color: $white !important;
+    text-decoration: none;
+    text-transform: uppercase;
+        &:hover {
+            color: $red !important;;
+        }
 
+}
+nav.fixed-top{
+    top:30px !important;
+}
 #hero-content{
     padding: 20px;
     position: relative;
@@ -129,6 +131,15 @@ p{ font-weight: 100;}
     }
 
 }
+.tnmf-btn{
+    padding: 15px 20px;
+    min-width: 300px;
+    font-size: 1.25rem;
+    color: $red !important;
+        &:hover {
+            color: $white !important;;
+        }
+}
 
 .button-holder{
     display: flex;
@@ -153,10 +164,10 @@ p{ font-weight: 100;}
         .btn-outline-primary{
             background: transparent;
             border: solid 2px $white;
-            color: $white;
+            color: $white !important;
                 &:hover{
                     background: $white;
-                    color: $red;
+                    color: $red !important;
                 }
         }
 

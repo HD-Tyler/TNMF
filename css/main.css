@@ -16,18 +16,11 @@ h2 {
   font-weight: 100; }
 
 body {
+  margin: 0 !important;
   font-family: 'Roboto', sans-serif; }
-
-.logged-in .navbar-fxed-top {
-  top: 32px; }
 
 p {
   font-weight: 100; }
-
-.tnmf-btn {
-  padding: 15px 20px;
-  min-width: 300px;
-  font-size: 1.25rem; }
 
 #hero {
   background: url(../images/hero.png) no-repeat center center fixed;
@@ -67,6 +60,16 @@ p {
   color: rgba(0, 0, 0, 0);
   border: none; }
 
+.navbar-nav .nav-link a {
+  color: #fff !important;
+  text-decoration: none;
+  text-transform: uppercase; }
+  .navbar-nav .nav-link a:hover {
+    color: #E70E0E !important; }
+
+nav.fixed-top {
+  top: 30px !important; }
+
 #hero-content {
   padding: 20px;
   position: relative;
@@ -93,6 +96,14 @@ p {
       color: #E70E0E;
       padding: 0 10px; }
 
+.tnmf-btn {
+  padding: 15px 20px;
+  min-width: 300px;
+  font-size: 1.25rem;
+  color: #E70E0E !important; }
+  .tnmf-btn:hover {
+    color: #fff !important; }
+
 .button-holder {
   display: flex;
   flex-direction: row;
@@ -115,10 +126,10 @@ p {
 .btn-outline-primary {
   background: transparent;
   border: solid 2px #fff;
-  color: #fff; }
+  color: #fff !important; }
   .btn-outline-primary:hover {
     background: #fff;
-    color: #E70E0E; }
+    color: #E70E0E !important; }
 
 .mudflap {
   background: url(../images/all-mf.png) no-repeat;

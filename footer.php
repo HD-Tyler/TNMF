@@ -15,7 +15,7 @@
 
 <!-- FOOTER
 ======================================================-->
-<section class="black-bg fixed-bottom">
+<section class="black-bg">
 <footer>
 	<div class="container-fluid">
 		<div class="row">
