@@ -68,7 +68,7 @@ p {
     color: #E70E0E !important; }
 
 nav.fixed-top {
-  top: 30px !important; }
+  top: 0 !important; }
 
 #hero-content {
   padding: 20px;

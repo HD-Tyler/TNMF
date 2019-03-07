@@ -97,7 +97,7 @@ p{ font-weight: 100;}
 
 }
 nav.fixed-top{
-    top:30px !important;
+    top:0 !important;
 }
 #hero-content{
     padding: 20px;
@@ -127,7 +127,7 @@ nav.fixed-top{
             text-decoration:line-through;
             color: $red;
             padding: 0 10px;
-            }
+            } 
     }
 
 }

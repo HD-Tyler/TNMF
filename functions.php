@@ -177,3 +177,6 @@ function load_primary_menu() {
 	}
 	echo $menu_list;
 }
+
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
