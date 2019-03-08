@@ -51,12 +51,11 @@ get_header();
     <!-- WHY GO WITH
     ======================================================-->
     <section id="why-go">
-        <div class="container-fluid clearfix">
+        <div class="container-fluid pad-mobile clearfix">
             <div class="row no-gutters">
                 <div class="col-sm-8 align-self-center">
                     <div class="this-content">
                         <h1><?php echo $why_title; ?></h1>
-                        <p>TEST</p>
                         <p><?php echo $why_description; ?>
                         </p>
                     </div>

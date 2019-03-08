@@ -179,11 +179,18 @@ nav.fixed-top{
     min-height: 440px;
     &::before{
         content: '';
-        background: $black;
-        position: relative;
-        
-    }
+            position: absolute;
+            z-index: -1; /* behind parent */
+            top: 0;
+            bottom: 0;
+            /* subtract h2 padding (1.5rem) */
+            left: 598.5rem;
+            right: 598.5rem;
+            background: green;
+        }
 }
+
+.pad-mobile{ padding: 0 !important;}
 
 .this-content{
     width: 70%;
@@ -332,9 +339,11 @@ footer p{
     #hero-content h2 { font-size: 1rem;}
     .this-content { width: 100%;}
     #features-list{ flex-direction: column;}
+    .pad-mobile{ padding: 0 15px;}
  }
 
  // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 767.98px) {
     #hero-content h1{font-size: 3.5rem;}
+    .pad-mobile{ padding: 0 15px;}
 }
